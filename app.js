@@ -7,8 +7,12 @@ const PORT = process.env.PORT || 5000;
 
 const product_routes = require('./routes/products');
 
+// Middleware
+app.use(express.json());
+
+// Routes
 app.get('/', (req, res) => {
-    res.send("Live Now");
+    res.send("REST API is running");
 });
 
 app.use('/api/products', product_routes);
@@ -17,9 +21,8 @@ const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
         app.listen(PORT, () => {
-            console.log(`${PORT} Yes I am connected`);
+            console.log(`Server running on port ${PORT}`);
         });
-        app.use('/api/products', product_routes);
     } catch (error) {
         console.log(error);
     }

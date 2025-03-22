@@ -1,15 +1,18 @@
 {
   "name": "restapi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "REST API for product management",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
