@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Iphone 15",
+        "price": 100000,
+        "featured": true,
+        "rating": 4.5,
+        "company": "apple"
+    },
+    {
+        "name": "Samsung S22",
+        "price": 100000,
+        "featured": true,
+        "rating": 4.5,
+        "company": "samsung"
+    },
+    {
+        "name": "Dell Inspiron",
+        "price": 100000,
+        "featured": false,
+        "rating": 4.5,
+        "company": "dell"
+    }, 
+    {
+        "name": "Mi 11 Lite",
+        "price": 10000,
+        "featured": true,
+        "rating": 4.5,
+        "company": "mi"
+    },
+    {
+        "name": "One Plus 12",
+        "price": 50000,
+        "featured": false,
+        "rating": 4.5,
+        "company": "oneplus"
+    },
+    {
+        "name": "One Plus 13",
+        "price": 70000,
+        "featured": true,
+        "rating": 4.5,
+        "company": "oneplus"
+    }
+]
