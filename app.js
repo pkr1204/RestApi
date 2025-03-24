@@ -28,6 +28,11 @@ const start = async () => {
     }
 };
 
-start();
+// Start the server if not in test mode
+if (process.env.NODE_ENV !== 'test') {
+    start();
+}
+
+module.exports = { app, start };
 
 
