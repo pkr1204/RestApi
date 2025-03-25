@@ -1,68 +1,94 @@
-# REST API
+# Product Management REST API
 
-A RESTful API for product management built with Node.js, Express, and MongoDB.
+A robust REST API built with Node.js, Express, and MongoDB that provides comprehensive product management functionality. The API supports advanced querying capabilities including filtering, sorting, and field selection.
 
 ## Features
 
-- GET products with filtering, sorting, and pagination
-- Search products by name
-- Filter products by company, featured status, etc.
+- **Product Listing**: Get all products with pagination support
+- **Advanced Filtering**: Filter products by:
+  - Company (apple, samsung, dell, mi, oneplus)
+  - Featured status
+  - Custom search by name
+- **Sorting**: Sort products by any field (e.g., price, name)
+- **Field Selection**: Select specific fields to be returned in the response
+- **Pagination**: Control the number of results per page
+- **Comprehensive Testing**: Includes unit and integration tests
 
-## Development
+## Tech Stack
 
-1. Clone the repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Create a `.env` file with your MongoDB connection string:
-   ```
-   MONGO_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/your-database
-   PORT=5000
-   ```
-4. Run the development server:
-   ```
-   npm run dev
-   ```
-
-## Deployment to Railway
-
-1. Create a Railway account at [railway.app](https://railway.app)
-2. Install the Railway CLI:
-   ```
-   npm i -g @railway/cli
-   ```
-3. Login to Railway:
-   ```
-   railway login
-   ```
-4. Initialize the project:
-   ```
-   railway init
-   ```
-5. Add MongoDB as a service:
-   ```
-   railway add
-   ```
-   Select MongoDB from the list.
-
-6. Set up environment variables on Railway dashboard.
-
-7. Deploy your application:
-   ```
-   railway up
-   ```
+- Node.js
+- Express.js
+- MongoDB
+- Jest (Testing)
+- Supertest (API Testing)
+- MongoDB Memory Server (Testing)
 
 ## API Endpoints
 
-- `GET /api/products` - Get all products
-- `GET /api/products?name=iPhone` - Search products by name
-- `GET /api/products?company=apple` - Filter products by company
-- `GET /api/products?sort=price` - Sort products by price (ascending)
-- `GET /api/products?sort=-price` - Sort products by price (descending)
-- `GET /api/products?select=name,price` - Select only specific fields
-- `GET /api/products?page=2&limit=5` - Pagination
+### GET /api/products
+Get all products with optional query parameters:
+
+```
+# Get all products
+GET /api/products
+
+# Filter by company
+GET /api/products?company=apple
+
+# Filter featured products
+GET /api/products?featured=true
+
+# Sort by price (ascending)
+GET /api/products?sort=price
+
+# Sort by price (descending)
+GET /api/products?sort=-price
+
+# Select specific fields
+GET /api/products?select=name,price
+
+# Pagination
+GET /api/products?page=1&limit=10
+```
+
+
+   ```
+
+## Testing
+
+The project includes both unit and integration tests using Jest and Supertest.
+
+### Test Coverage
+- Integration tests for all API endpoints
+- Unit tests for controllers
+- In-memory MongoDB database for testing
+- Mocked database queries
+- API response validation
+
+## Project Structure
+
+```
+├── app.js              # Application entry point
+├── controllers/        # Route controllers
+├── models/            # Database models
+├── routes/            # API routes
+├── tests/             # Test files
+│   ├── controllers.test.js
+│   ├── product.test.js
+│   └── db-handler.js
+└── .env               # Environment variables
+```
+
+## Development
+
+To contribute to this project:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-ISC 
+ISC
